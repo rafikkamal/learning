@@ -27,6 +27,10 @@ myApp.controller('userController', ['$scope', '$http', '$location', 'userModel',
 			userModel.doLogin(data).then(function(){
 				$location.path('/dashboard');
 			});
+		},
+		doLogout: function(){
+			userModel.doUserLogout();
+			$location.path('/');
 		}
 	});
 	

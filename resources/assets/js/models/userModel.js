@@ -21,8 +21,10 @@ myApp.factory('userModel', ['$http', '$cookies', function($http, $cookies) {
                 password: loginData.password
             }
         }).then(function successCallback(response) {
-            alert('SUCCESS ===> '+response.data.name);
+            //console.log(response);
+            $cookies.put('auth', JSON.stringify(response));
         }, function errorCallback(response) {
+            //console.log(response);
             alert('ERROR : '+response.data);
         });
     };
